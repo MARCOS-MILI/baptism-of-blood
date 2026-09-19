@@ -813,10 +813,13 @@ footer{
   </header>
   <svg class="ornament" viewBox="0 0 200 20" aria-hidden="true"><line x1="0" y1="10" x2="85" y2="10"/><path d="M100 2 L108 10 L100 18 L92 10 Z"/><line x1="115" y1="10" x2="200" y2="10"/></svg>
 
-  <p class="formula">Vida = Vitalidade × 5 <span>(+ bônus da classe)</span></p>
-  <p class="formula">Sanidade = Vontade × 5 <span>(+ bônus da classe)</span></p>
-  <p class="formula">Mana = (Alma + Vontade) × 3 <span>(+ bônus da classe)</span></p>
-  <p class="formula">Estamina = (Força + Vitalidade) × 3 <span>(+ bônus da classe)</span></p>
+  <p>A cada nível, o personagem soma de novo o valor de cada recurso, calculado com os atributos que ele tinha naquele nível. O bônus da classe entra uma vez só, depois de somar todos os níveis.</p>
+  <p class="formula">Vida = Vitalidade × 5 <span>(a cada nível)</span></p>
+  <p class="formula">Sanidade = Vontade × 5 <span>(a cada nível)</span></p>
+  <p class="formula">Mana = (Alma + Vontade) × 3 <span>(a cada nível)</span></p>
+  <p class="formula">Estamina = (Força + Vitalidade) × 3 <span>(a cada nível)</span></p>
+  <p>No nível 1 a conta vale uma vez, e cada nível novo soma outra vez. O nível em que o personagem está sempre usa os atributos atuais; quando ele sobe, o nível que ficou pra trás guarda os atributos daquele momento, e um aumento de atributo só vale daí pra frente. Por isso a Vida e os outros recursos crescem muito conforme os atributos do personagem.</p>
+  <p>Exemplo com Caçador (bônus de Vida 35): Vitalidade 3 nos níveis 1 a 3 e 4 a partir do nível 4. A Vida fica 80 no nível 3, 100 no nível 4 e 120 no nível 5.</p>
   <p>Mana e Estamina se recuperam ao descansar ou ao fim de uma cena. O ritmo depende da ordem cronológica das cenas, a critério do mestre. Meditar ou dormir durante uma cena também recupera as duas.</p>
 </section>
 <section class="chapter" id="pericias" data-section="sistema">
@@ -1541,7 +1544,7 @@ footer{
   <p>Nos níveis pares o personagem escolhe entre criar uma habilidade nova, seguindo a mesma lógica da Habilidade Própria inicial, ou melhorar uma habilidade que já tem.</p>
   <p>Atributo sobe mais devagar de propósito: a progressão é pensada pra manter os personagens relativamente fracos ao longo do tempo, não pra virarem lendas em poucas sessões.</p>
   <p>Pontos de Atributo ganhos por nível podem ultrapassar o limite de criação (3 pro humano, 5 pro vampiro). Isso representa o personagem crescendo além do que é natural pra sua raça através da experiência, e não um erro de ficha.</p>
-  <p>O nível não dá Vida direto: a Vida sobe quando os pontos de atributo vão pra Vitalidade (cada ponto vale +5 Vida e +3 Estamina).</p>
+  <p>A cada nível o personagem soma de novo Vida, Sanidade, Mana e Estamina, calculados com os atributos que tinha naquele nível (ver Recursos). Por isso os pontos de atributo pesam bastante nos recursos.</p>
 </section>
 <section class="chapter" id="ferramentas" data-section="ferramentas">
   <header class="chapter-head">
@@ -1574,7 +1577,7 @@ footer{
 
   <div class="tool-box">
     <h3>Calculadora de Recursos</h3>
-    <p class="tool-hint">Preenche os atributos e escolhe a classe pra ver Vida, Sanidade, Mana e Estamina na hora.</p>
+    <p class="tool-hint">Preenche os atributos, o nível e escolhe a classe pra ver Vida, Sanidade, Mana e Estamina na hora.</p>
     <div class="calc-grid">
       <label>Força<input type="number" class="calc-attr" data-attr="forca" value="0"></label>
       <label>Destreza<input type="number" class="calc-attr" data-attr="destreza" value="0"></label>
@@ -1582,6 +1585,7 @@ footer{
       <label>Razão<input type="number" class="calc-attr" data-attr="razao" value="0"></label>
       <label>Vontade<input type="number" class="calc-attr" data-attr="vontade" value="0"></label>
       <label>Alma<input type="number" class="calc-attr" data-attr="alma" value="0"></label>
+      <label>Nível<input type="number" id="calcLevel" value="1" min="1" max="10"></label>
     </div>
     <label class="calc-class-label">Classe (bônus)
       <select id="calcClass">
@@ -1590,25 +1594,26 @@ footer{
       </select>
     </label>
     <div id="calcResult" class="calc-result"></div>
+    <p class="tool-hint" style="margin:1rem 0 0">A calculadora usa os mesmos atributos em todos os níveis. O bot de Discord é mais exato: ele guarda os atributos de cada nível.</p>
   </div>
 
   <div class="tool-box">
     <h3>Quanto vale cada ponto</h3>
     <div class="table-wrap"><table>
-    <thead><tr><th>Atributo</th><th>Cada ponto dá</th></tr></thead>
+    <thead><tr><th>Atributo</th><th>Cada ponto dá, a cada nível</th></tr></thead>
     <tbody>
-<tr data-search="vitalidade +5 vida e +3 estamina"><td data-label="Atributo">Vitalidade</td><td data-label="Cada ponto dá">+5 Vida e +3 Estamina</td></tr>
-<tr data-search="vontade +5 sanidade e +3 mana"><td data-label="Atributo">Vontade</td><td data-label="Cada ponto dá">+5 Sanidade e +3 Mana</td></tr>
-<tr data-search="alma +3 mana"><td data-label="Atributo">Alma</td><td data-label="Cada ponto dá">+3 Mana</td></tr>
-<tr data-search="força +3 estamina"><td data-label="Atributo">Força</td><td data-label="Cada ponto dá">+3 Estamina</td></tr></tbody>
+<tr data-search="vitalidade +5 vida e +3 estamina"><td data-label="Atributo">Vitalidade</td><td data-label="Cada ponto dá, a cada nível">+5 Vida e +3 Estamina</td></tr>
+<tr data-search="vontade +5 sanidade e +3 mana"><td data-label="Atributo">Vontade</td><td data-label="Cada ponto dá, a cada nível">+5 Sanidade e +3 Mana</td></tr>
+<tr data-search="alma +3 mana"><td data-label="Atributo">Alma</td><td data-label="Cada ponto dá, a cada nível">+3 Mana</td></tr>
+<tr data-search="força +3 estamina"><td data-label="Atributo">Força</td><td data-label="Cada ponto dá, a cada nível">+3 Estamina</td></tr></tbody>
   </table></div>
-    <p>Destreza e Razão não entram nas contas de recursos.</p>
+    <p>Destreza e Razão não entram nas contas de recursos. Um ponto colocado num atributo rende esse valor em cada nível dali pra frente.</p>
   </div>
 
   <div class="tool-box">
-    <h3>Ajustando a Vida ao subir de nível</h3>
-    <p>O jogador distribui os pontos de atributo que ganhou e recalcula os recursos. Cada ponto que vai pra Vitalidade soma +5 na Vida e +3 na Estamina; o nível em si não dá Vida.</p>
-    <p>O bot de Discord faz o mesmo cálculo de duas formas: o <code>/calcular_recursos</code> serve pra simular com os números que o jogador digitar, e o <code>/minha_ficha</code> já mostra Vida, Sanidade, Mana e Estamina reais do personagem, recalculados sozinhos quando ele aumenta um atributo.</p>
+    <h3>Recursos ao subir de nível</h3>
+    <p>Quando o personagem sobe de nível, o nível novo soma Vida, Sanidade, Mana e Estamina calculados com os atributos que ele tem naquele momento. Por isso vale distribuir os pontos de atributo logo depois de subir: eles já entram na conta do nível atual. Os níveis que ficaram pra trás não mudam.</p>
+    <p>O bot de Discord faz a conta exata: o <code>/minha_ficha</code> mostra Vida, Sanidade, Mana e Estamina reais, somando cada nível com os atributos que o personagem tinha nele, e o <code>/calcular_recursos</code> simula com os números e o nível que o jogador digitar (com o mesmo atributo em todos os níveis).</p>
   </div>
 </section>
 
@@ -1625,7 +1630,7 @@ footer{
   <p>Nessa ordem: <code>/personagem criar</code>, <code>/magia_inicial</code>, <code>/raca_inicial</code>, <code>/classe_social</code>, <code>/classe</code>, <code>/atributos</code> e <code>/minha_ficha</code>. Cada sorteio vale uma vez só por personagem, e o resultado aparece pra todo mundo. A classe também vale uma vez só. Se der erro, um mestre corrige.</p>
 
   <h3>Atributos no bot</h3>
-  <p>O jogador distribui os pontos com <code>/atributos</code> (só preenche o que quer mudar) e só pode <b>aumentar</b>; pra diminuir, precisa de um mestre. O bot confere duas coisas: o total de pontos (6 na criação mais 1 a cada 2 níveis) e os limites de criação da raça (Humano: 3 em Força, Destreza e Vitalidade e 6 em Razão; Vampiro: 5 em Força, Destreza e Vitalidade; Vontade e Alma sem limite). Só os pontos que vêm de nível podem passar dos limites de criação, como explica o capítulo Progressão. Pro Dhampir, como os limites ainda não foram definidos, o bot só confere o total. O jogador precisa ter sorteado a raça antes. Os mestres podem definir atributos na mão, sem essas conferências.</p>
+  <p>O jogador distribui os pontos com <code>/atributos</code> (só preenche o que quer mudar) e só pode <b>aumentar</b>; pra diminuir, precisa de um mestre. O bot confere duas coisas: o total de pontos (6 na criação mais 1 a cada 2 níveis) e os limites de criação da raça (Humano: 3 em Força, Destreza e Vitalidade e 6 em Razão; Vampiro: 5 em Força, Destreza e Vitalidade; Vontade e Alma sem limite). Só os pontos que vêm de nível podem passar dos limites de criação, como explica o capítulo Progressão. Pro Dhampir, como os limites ainda não foram definidos, o bot só confere o total. O jogador precisa ter sorteado a raça antes. Os mestres podem definir atributos na mão, sem essas conferências. Os atributos de cada nível ficam guardados pra conta dos recursos (ver Recursos).</p>
 
   <h3>Limite de personagens</h3>
   <p>Cada jogador pode ter até 3 personagens. Os mestres podem liberar vagas extras, na mão, até 10 no total. O jogador pode excluir um personagem quando quiser, mas a exclusão é permanente: a ficha, o XP e os ranks somem, a vaga é liberada e as rolagens antigas continuam no histórico.</p>
@@ -1646,7 +1651,7 @@ footer{
 <tr data-search="/niveis mostra o xp e as vantagens de cada nível e marca o nível do personagem"><td data-label="Comando"><span><code>/niveis</code></span></td><td data-label="O que faz">Mostra o XP e as vantagens de cada nível e marca o nível do personagem</td></tr>
 <tr data-search="/extrato_xp mostra de onde veio o xp do personagem, com motivo e mestre"><td data-label="Comando"><span><code>/extrato_xp</code></span></td><td data-label="O que faz">Mostra de onde veio o XP do personagem, com motivo e mestre</td></tr>
 <tr data-search="/rank rank público de xp total, de personagens ou de jogadores (soma dos personagens de cada um)"><td data-label="Comando"><span><code>/rank</code></span></td><td data-label="O que faz">Rank público de XP total, de personagens ou de jogadores (soma dos personagens de cada um)</td></tr>
-<tr data-search="/calcular_recursos simula vida, sanidade, mana e estamina com os números que o jogador digitar e mostra a conta"><td data-label="Comando"><span><code>/calcular_recursos</code></span></td><td data-label="O que faz">Simula Vida, Sanidade, Mana e Estamina com os números que o jogador digitar e mostra a conta</td></tr></tbody>
+<tr data-search="/calcular_recursos simula vida, sanidade, mana e estamina com os números e o nível que o jogador digitar e mostra a conta"><td data-label="Comando"><span><code>/calcular_recursos</code></span></td><td data-label="O que faz">Simula Vida, Sanidade, Mana e Estamina com os números e o nível que o jogador digitar e mostra a conta</td></tr></tbody>
   </table></div>
   <p>Vários comandos aceitam o campo opcional <code>personagem:</code> pra escolher qual personagem usar; sem ele, vale o que o jogador está usando.</p>
 
@@ -1830,14 +1835,16 @@ footer{
 
   var calcAttrs = Array.prototype.slice.call(document.querySelectorAll('.calc-attr'));
   var calcClassSel = document.getElementById('calcClass');
+  var calcLevel = document.getElementById('calcLevel');
   function updateCalc(){
     var vals = {};
     calcAttrs.forEach(function(inp){ vals[inp.dataset.attr] = parseInt(inp.value, 10) || 0; });
     var bonus = (calcClassSel.value || '0,0,0,0').split(',').map(Number);
-    var vida = vals.vitalidade * 5 + bonus[0];
-    var sanidade = vals.vontade * 5 + bonus[1];
-    var mana = (vals.alma + vals.vontade) * 3 + bonus[2];
-    var estamina = (vals.forca + vals.vitalidade) * 3 + bonus[3];
+    var nivel = Math.max(1, Math.min(10, parseInt(calcLevel.value, 10) || 1));
+    var vida = vals.vitalidade * 5 * nivel + bonus[0];
+    var sanidade = vals.vontade * 5 * nivel + bonus[1];
+    var mana = (vals.alma + vals.vontade) * 3 * nivel + bonus[2];
+    var estamina = (vals.forca + vals.vitalidade) * 3 * nivel + bonus[3];
     var bolso = 2 + vals.forca + vals.vitalidade;
     var el = document.getElementById('calcResult');
     if (!el) return;
@@ -1851,6 +1858,7 @@ footer{
   if (calcAttrs.length) {
     calcAttrs.forEach(function(inp){ inp.addEventListener('input', updateCalc); });
     calcClassSel.addEventListener('change', updateCalc);
+    calcLevel.addEventListener('input', updateCalc);
     updateCalc();
   }
 })();
