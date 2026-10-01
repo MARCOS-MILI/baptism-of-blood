@@ -710,11 +710,11 @@ footer{max-width:760px;margin-left:auto;margin-right:auto;}
   <p class="lead">Este é o caminho mais curto até uma ficha pronta. Siga os passos na ordem: cada um leva ao capítulo com os detalhes.</p>
   <ol class="steps">
     <li data-search="teste dado d20 dificuldade"><b>Entenda o teste</b>Todo teste é <code>1d20</code> + Atributo + Perícia contra uma Dificuldade: 10 fácil, 15 médio, 20 difícil, 25 muito difícil, 30 quase impossível. <a href="#/sistema/mecanica">Mecânica de Teste ›</a></li>
-    <li><b>Sorteie a raça</b>Um 1d100, uma vez só: Humano 85%, Vampiro 10%, Dhampir 5%. <a href="#/sistema/racas">Raças ›</a></li>
-    <li><b>Sorteie a classe social</b>Outro 1d100: 3º Estado 80%, 2º Estado 11%, 1º Estado 8%, e em 1% o mestre decide. No 1º Estado, mais um sorteio decide se é Baixo ou Alto Clero. <a href="#/sistema/classe-social">Classe Social ›</a></li>
+    <li><b>Sorteie a raça</b>Um 1d100, com até 3 rolagens (vale a última): Humano 85%, Vampiro 10%, Dhampir 5%. <a href="#/sistema/racas">Raças ›</a></li>
+    <li><b>Sorteie a classe social</b>Outro 1d100, também com até 3 rolagens: 3º Estado 80%, 2º Estado 11%, 1º Estado 8%, e em 1% o mestre decide. No 1º Estado, mais um sorteio decide se é Baixo ou Alto Clero. <a href="#/sistema/classe-social">Classe Social ›</a></li>
     <li><b>Escolha a classe</b>Cada classe dá um bônus de recursos, vantagem em duas perícias e uma habilidade. <a href="#/classes/classes">Classes ›</a></li>
     <li><b>Distribua os atributos</b>São 6 pontos entre Força, Destreza, Vitalidade, Razão, Vontade e Alma, respeitando os limites da raça. <a href="#/sistema/atributos">Atributos ›</a></li>
-    <li><b>Distribua as perícias</b>São 25 pontos, com no máximo 7 em uma mesma perícia. <a href="#/sistema/pericias">Perícias Comuns ›</a></li>
+    <li><b>Distribua as perícias</b>São 25 pontos (30 pro Mundano), com no máximo 7 em cada perícia, em qualquer nível. <a href="#/sistema/pericias">Perícias Comuns ›</a></li>
     <li><b>Escolha as habilidades</b>Crie uma habilidade própria com o mestre e leve a habilidade da classe. <a href="#/classes/habilidades-iniciais">Habilidade Própria ›</a></li>
     <li><b>Sorteie a magia inicial, se tiver</b>Só vampiros, dhampirs e as classes Feiticeiros e Mestre de Forja. O Rank da magia sai de um 1d100. <a href="#/sistema/magia">Sistema de Magia ›</a></li>
     <li><b>É vampiro ou dhampir?</b>Distribua os pontos de Disciplina (4 pro vampiro, 3 pro dhampir, grau máximo 3) e conheça as fraquezas. <a href="#/vampiros">Vampiros ›</a></li>
@@ -733,6 +733,9 @@ footer{max-width:760px;margin-left:auto;margin-right:auto;}
   <p>Toda ação relevante é resolvida rolando 1d20, somado ao atributo pertinente e à perícia usada, contra a Dificuldade da ação.</p>
   <p class="formula">1d20 + Atributo + Perícia</p>
   <p>Rolar mais de um dado numa mesma ação é raro. Só ocorre por meio de uma Disciplina, uma classe específica ou um item com essa propriedade explícita.</p>
+
+  <h3>Vantagem e Desvantagem</h3>
+  <p>Com vantagem, o jogador rola dois d20 e fica com o maior. Com desvantagem, rola dois e fica com o menor.</p>
   <h3>Tabela de Dificuldade</h3>
   <div class="table-wrap"><table>
     <thead><tr><th>DT</th><th>Nível</th></tr></thead>
@@ -825,7 +828,7 @@ footer{max-width:760px;margin-left:auto;margin-right:auto;}
   </header>
   <svg class="ornament" viewBox="0 0 200 20" aria-hidden="true"><line x1="0" y1="10" x2="85" y2="10"/><path d="M100 2 L108 10 L100 18 L92 10 Z"/><line x1="115" y1="10" x2="200" y2="10"/></svg>
 
-  <p>25 pontos para distribuir na criação, com máximo de 7 pontos em uma mesma perícia. O atributo somado no teste depende da ação e do contexto da cena, não é fixo por perícia.</p>
+  <p>25 pontos para distribuir na criação (o Mundano começa com 30). Cada nível dá +2 pontos de perícia, e o Sábio ganha +4. <b>Nenhuma perícia passa de 7 pontos, em qualquer nível</b>: nem com os pontos ganhos ao subir. O atributo somado no teste depende da ação e do contexto da cena, não é fixo por perícia.</p>
   <div class="entry-grid two">
     <details class="entry" data-search="acrobacia">
       <summary>Acrobacia</summary>
@@ -1029,7 +1032,7 @@ footer{max-width:760px;margin-left:auto;margin-right:auto;}
   <svg class="ornament" viewBox="0 0 200 20" aria-hidden="true"><line x1="0" y1="10" x2="85" y2="10"/><path d="M100 2 L108 10 L100 18 L92 10 Z"/><line x1="115" y1="10" x2="200" y2="10"/></svg>
 
   <h3>Sorteio de Raça</h3>
-  <p>Rolado em 1d100 na criação, uma vez só por personagem.</p>
+  <p>Rolado em 1d100 na criação, com até 3 rolagens por personagem: vale a última, e o bot sempre pergunta antes de rolar de novo.</p>
   <div class="table-wrap"><table>
     <thead><tr><th>Raça</th><th>Resultado no 1d100</th><th>Chance</th></tr></thead>
     <tbody>
@@ -1056,7 +1059,7 @@ footer{max-width:760px;margin-left:auto;margin-right:auto;}
   </header>
   <svg class="ornament" viewBox="0 0 200 20" aria-hidden="true"><line x1="0" y1="10" x2="85" y2="10"/><path d="M100 2 L108 10 L100 18 L92 10 Z"/><line x1="115" y1="10" x2="200" y2="10"/></svg>
 
-  <p>Rolada em 1d100 na criação, uma vez só por personagem. Representa o Estado em que o personagem nasceu, conforme os três Estados descritos em Viver em 1790 (aba Lore). No bot, o <code>/classe_social</code> faz o sorteio e registra o Estado.</p>
+  <p>Rolada em 1d100 na criação, com até 3 rolagens por personagem: vale a última, e o bot sempre pergunta antes de rolar de novo. Representa o Estado em que o personagem nasceu, conforme os três Estados descritos em Viver em 1790 (aba Lore). No bot, o <code>/classe_social</code> faz o sorteio e registra o Estado.</p>
   <div class="table-wrap"><table>
     <thead><tr><th>Resultado</th><th>Resultado no 1d100</th><th>Chance</th></tr></thead>
     <tbody>
@@ -1164,7 +1167,7 @@ footer{max-width:760px;margin-left:auto;margin-right:auto;}
 <tr data-search="10 (máximo) 45.000 +2 pontos de perícia, +1 ponto de atributo, habilidade nova ou melhorada 11"><td data-label="Nível">10 (máximo)</td><td data-label="XP total pra chegar">45.000</td><td data-label="Vantagens">+2 pontos de Perícia, +1 ponto de Atributo, habilidade nova ou melhorada</td><td data-label="Pontos de Atributo no total">11</td></tr></tbody>
   </table></div>
   <p><b>Disciplina</b>: vampiros e dhampirs ganham, além disso, +1 ponto de Disciplina nos níveis pares (2, 4, 6, 8 e 10).</p>
-  <p>Somando tudo do nível 1 ao 10: 18 pontos de Perícia, 5 pontos de Atributo e 5 habilidades novas ou melhoradas (mais 5 pontos de Disciplina pra vampiros e dhampirs). A coluna "Pontos de Atributo no total" soma os 6 pontos da criação com os que vêm de nível, e é a conta que o bot usa pra conferir a distribuição. Depois do nível 10 o XP continua contando, mas não sobe mais nível.</p>
+  <p>Somando tudo do nível 1 ao 10: 18 pontos de Perícia (36 pro Sábio), 5 pontos de Atributo e 5 habilidades novas ou melhoradas (mais 5 pontos de Disciplina pra vampiros e dhampirs). A coluna "Pontos de Atributo no total" soma os 6 pontos da criação com os que vêm de nível, e é a conta que o bot usa pra conferir a distribuição. Depois do nível 10 o XP continua contando, mas não sobe mais nível.</p>
   <p>Nos níveis pares o personagem escolhe entre criar uma habilidade nova, seguindo a mesma lógica da Habilidade Própria inicial, ou melhorar uma habilidade que já tem.</p>
   <p>Atributo sobe mais devagar de propósito: a progressão é pensada pra manter os personagens relativamente fracos ao longo do tempo, não pra virarem lendas em poucas sessões.</p>
   <p>Pontos de Atributo ganhos por nível podem ultrapassar o limite de criação (3 pro humano, 5 pro vampiro). Isso representa o personagem crescendo além do que é natural pra sua raça através da experiência, e não um erro de ficha.</p>
@@ -1726,6 +1729,7 @@ footer{max-width:760px;margin-left:auto;margin-right:auto;}
       <summary>Habilidade Própria</summary>
       <div class="entry-body">
         <p>Sem regra fixa de custo, tipo (ativa ou passiva) ou balanceamento. O jogador manda o rascunho pro mestre, que ajusta o que for preciso até ficar equilibrado. O foco do jogador deve ser a criatividade: a habilidade precisa representar o personagem e as capacidades que ele quer ter além de um humano ou vampiro comum.</p>
+        <p>Além dessa, o jogador pode propor outras habilidades, até 8 por personagem (sem contar as recusadas). O mestre ajusta, aprova ou recusa, e define o custo (Mana, Estamina, Sanidade ou Vida) e o dado de dano ou cura, com um atributo somado se quiser. Quem aplica o dano ou a cura no alvo é o mestre.</p>
       </div>
     </details>
     <details class="entry">
@@ -1830,64 +1834,65 @@ footer{max-width:760px;margin-left:auto;margin-right:auto;}
     <p>O bot de Discord faz a conta exata: o <code>/minha_ficha</code> mostra Vida, Sanidade, Mana e Estamina reais, somando cada nível com os atributos que o personagem tinha nele, e o <code>/calcular_recursos</code> simula com os números e o nível que o jogador digitar (com o mesmo atributo em todos os níveis).</p>
   </div>
 </section>
-<section class="chapter" id="bot-discord" data-tab="ferramentas" data-title="Bot de Discord" data-summary="Comandos dos jogadores e dos mestres." data-icon="chat" data-group="">
+<section class="chapter" id="bot-discord" data-tab="ferramentas" data-title="Bot de Discord" data-summary="O que o jogador faz pelo bot: criar a ficha, rolar perícias, criar e usar habilidades e rolar dados." data-icon="chat" data-group="">
   <header class="chapter-head">
     <span class="chapter-num">II</span>
     <h2>Bot de Discord</h2>
   </header>
   <svg class="ornament" viewBox="0 0 200 20" aria-hidden="true"><line x1="0" y1="10" x2="85" y2="10"/><path d="M100 2 L108 10 L100 18 L92 10 Z"/><line x1="115" y1="10" x2="200" y2="10"/></svg>
 
-  <p>O bot do servidor rola dados, guarda o histórico e mantém a ficha automática de cada personagem.</p>
+  <p>O bot do servidor rola dados e mantém a ficha automática de cada personagem. O jogador faz quase tudo por botões.</p>
 
-  <h3>Pra começar</h3>
-  <p>Nessa ordem: <code>/personagem criar</code>, <code>/magia_inicial</code>, <code>/raca_inicial</code>, <code>/classe_social</code>, <code>/classe</code>, <code>/atributos</code> e <code>/minha_ficha</code>. Cada sorteio vale uma vez só por personagem, e o resultado aparece pra todo mundo. A classe também vale uma vez só. Se der erro, um mestre corrige.</p>
+  <h3>Começar</h3>
+  <p>O mestre fixa uma mensagem de boas-vindas no canal. O jogador aperta <b>🆕 Criar personagem</b>, diz o nome, e a ficha abre com botões na ordem certa: Raça, Classe social, Classe e Atributos. O 🔒 quer dizer que o passo ainda não abriu, e o ✅ que já foi feito.</p>
+  <p>Raça e Classe social podem ser rolados até 3 vezes: vale a última, e o bot sempre pergunta antes de rolar de novo. O Rank de magia, pra quem tem magia inicial, vale uma vez só. Se der erro, um mestre corrige.</p>
+
+  <h3>A ficha</h3>
+  <p>O <code>/minha_ficha</code> abre a ficha com 4 abas: Ficha, Vitais, Perícias e Habilidades. O <code>/pericias</code> e o <code>/habilidades</code> abrem direto nas duas últimas.</p>
+  <div class="info-grid">
+    <article class="info-card deco" data-kind="Bot" data-search="ficha os passos da criação, as disciplinas, os dados, os níveis, a ajuda e a troca de personagem."><h4>Ficha</h4><p>Os passos da criação, as Disciplinas, os dados, os níveis, a ajuda e a troca de personagem.</p></article>
+    <article class="info-card deco" data-kind="Bot" data-search="vitais barras de vida, sanidade, mana e estamina. escolha a barra e use -10, -5, -1, +1, +5 e +10. “valor exato” deixa digitar, e “restaurar tudo” é o descanso. precisa ter escolhido a classe."><h4>Vitais</h4><p>Barras de Vida, Sanidade, Mana e Estamina. Escolha a barra e use -10, -5, -1, +1, +5 e +10. “Valor exato” deixa digitar, e “Restaurar tudo” é o descanso. Precisa ter escolhido a classe.</p></article>
+    <article class="info-card deco" data-kind="Bot" data-search="perícias cada perícia tem um ícone. toque nele e o bot rola 1d20 + atributo + perícia sozinho, no nome do personagem. o atributo é o padrão de cada perícia (o botão atributo deixa forçar outro), e o botão do modo troca entre normal, vantagem e desvantagem. a vantagem que a classe dá entra sozinha. o botão distribuir abre a tela dos pontos (25 na criação, no máximo 7 em cada) e o menu onde caçador e mercenário escolhem luta ou pontaria e o mundano escolhe duas."><h4>Perícias</h4><p>Cada perícia tem um ícone. Toque nele e o bot rola 1d20 + atributo + perícia sozinho, no nome do personagem. O atributo é o padrão de cada perícia (o botão Atributo deixa forçar outro), e o botão do modo troca entre normal, vantagem e desvantagem. A vantagem que a classe dá entra sozinha. O botão Distribuir abre a tela dos pontos (25 na criação, no máximo 7 em cada) e o menu onde Caçador e Mercenário escolhem Luta ou Pontaria e o Mundano escolhe duas.</p></article>
+    <article class="info-card deco" data-kind="Bot" data-search="habilidades “criar habilidade” abre um formulário (nome, descrição e o que você quer que ela faça). o mestre ajusta e aprova, e define custo e dado. na lista: ⏳ aguardando, 🔧 ajuste pedido (com nota), ✅ aprovada, ❌ recusada. aprovada, “usar” gasta o custo da barra e rola o dado no canal. dá pra editar ou apagar as que ainda não foram aprovadas. no máximo 8 por personagem."><h4>Habilidades</h4><p>“Criar habilidade” abre um formulário (nome, descrição e o que você quer que ela faça). O mestre ajusta e aprova, e define custo e dado. Na lista: ⏳ aguardando, 🔧 ajuste pedido (com nota), ✅ aprovada, ❌ recusada. Aprovada, “Usar” gasta o custo da barra e rola o dado no canal. Dá pra editar ou apagar as que ainda não foram aprovadas. No máximo 8 por personagem.</p></article>
+    <article class="info-card deco" data-kind="Bot" data-search="habilidade de classe a habilidade da sua classe fica no botão habilidade de classe. ela é outra coisa que a aba habilidades, onde ficam as que você cria."><h4>Habilidade de classe</h4><p>A habilidade da sua classe fica no botão Habilidade de classe. Ela é outra coisa que a aba Habilidades, onde ficam as que você cria.</p></article>
+  </div>
 
   <h3>Atributos no bot</h3>
-  <p>O jogador distribui os pontos com <code>/atributos</code> (só preenche o que quer mudar) e só pode <b>aumentar</b>; pra diminuir, precisa de um mestre. O bot confere duas coisas: o total de pontos (6 na criação mais 1 a cada 2 níveis) e os limites de criação da raça (Humano: 3 em Força, Destreza e Vitalidade e 6 em Razão; Vampiro: 5 em Força, Destreza e Vitalidade; Vontade e Alma sem limite). Só os pontos que vêm de nível podem passar dos limites de criação, como explica o capítulo Progressão. Pro Dhampir, como os limites ainda não foram definidos, o bot só confere o total. O jogador precisa ter sorteado a raça antes. Os mestres podem definir atributos na mão, sem essas conferências. Os atributos de cada nível ficam guardados pra conta dos recursos (ver Recursos).</p>
+  <p>O jogador distribui os pontos pelo botão Atributos (ou pelo <code>/atributos</code>) e só pode <b>aumentar</b>; pra baixar, precisa de um mestre. O bot confere duas coisas: o total de pontos (6 na criação mais 1 a cada 2 níveis) e os limites de criação da raça (Humano: 3 em Força, Destreza e Vitalidade e 6 em Razão; Vampiro: 5 em Força, Destreza e Vitalidade; Vontade e Alma sem limite). Só os pontos que vêm de nível podem passar dos limites de criação, como explica o capítulo Progressão. Pro Dhampir, como os limites ainda não foram definidos, o bot só confere o total. O jogador precisa ter sorteado a raça antes. Os atributos de cada nível ficam guardados pra conta dos recursos (ver Recursos).</p>
 
   <h3>Limite de personagens</h3>
-  <p>Cada jogador pode ter até 3 personagens. Os mestres podem liberar vagas extras, na mão, até 10 no total. O jogador pode excluir um personagem quando quiser, mas a exclusão é permanente: a ficha, o XP e os ranks somem, a vaga é liberada e as rolagens antigas continuam no histórico.</p>
+  <p>Cada jogador pode ter até 3 personagens, e um mestre pode liberar vagas extras, até 10 no total. O jogador pode excluir um personagem quando quiser, mas a exclusão é permanente: a ficha, o XP e os ranks somem, a vaga é liberada e as rolagens antigas continuam no histórico.</p>
 
   <h3>Comandos dos jogadores</h3>
   <div class="table-wrap"><table>
     <thead><tr><th>Comando</th><th>O que faz</th></tr></thead>
     <tbody>
-<tr data-search="/rolar rola um dado (ex: 1d20+3) e guarda no histórico, com motivo opcional"><td data-label="Comando"><span><code>/rolar</code></span></td><td data-label="O que faz">Rola um dado (ex: 1d20+3) e guarda no histórico, com motivo opcional</td></tr>
-<tr data-search="/historico mostra as últimas rolagens de alguém, ou de um personagem"><td data-label="Comando"><span><code>/historico</code></span></td><td data-label="O que faz">Mostra as últimas rolagens de alguém, ou de um personagem</td></tr>
 <tr data-search="/personagem criar, usar, listar, excluir cria, troca, lista e exclui personagens"><td data-label="Comando"><span><code>/personagem criar</code>, <code>usar</code>, <code>listar</code>, <code>excluir</code></span></td><td data-label="O que faz">Cria, troca, lista e exclui personagens</td></tr>
-<tr data-search="/magia_inicial sorteia o rank de magia"><td data-label="Comando"><span><code>/magia_inicial</code></span></td><td data-label="O que faz">Sorteia o Rank de magia</td></tr>
 <tr data-search="/raca_inicial sorteia a raça"><td data-label="Comando"><span><code>/raca_inicial</code></span></td><td data-label="O que faz">Sorteia a Raça</td></tr>
 <tr data-search="/classe_social sorteia o estado (e o clero, se for 1º estado)"><td data-label="Comando"><span><code>/classe_social</code></span></td><td data-label="O que faz">Sorteia o Estado (e o Clero, se for 1º Estado)</td></tr>
-<tr data-search="/classe escolhe a classe do personagem (uma vez só)"><td data-label="Comando"><span><code>/classe</code></span></td><td data-label="O que faz">Escolhe a classe do personagem (uma vez só)</td></tr>
+<tr data-search="/classe escolhe a classe do personagem"><td data-label="Comando"><span><code>/classe</code></span></td><td data-label="O que faz">Escolhe a classe do personagem</td></tr>
+<tr data-search="/habilidade mostra a habilidade da classe do personagem"><td data-label="Comando"><span><code>/habilidade</code></span></td><td data-label="O que faz">Mostra a habilidade da classe do personagem</td></tr>
+<tr data-search="/magia_inicial sorteia o rank de magia (só pra quem tem magia inicial)"><td data-label="Comando"><span><code>/magia_inicial</code></span></td><td data-label="O que faz">Sorteia o Rank de magia (só pra quem tem magia inicial)</td></tr>
 <tr data-search="/atributos distribui os pontos de atributo (só dá pra aumentar)"><td data-label="Comando"><span><code>/atributos</code></span></td><td data-label="O que faz">Distribui os pontos de atributo (só dá pra aumentar)</td></tr>
-<tr data-search="/minha_ficha mostra nível, xp, raça, classe social, rank de magia, classe, atributos, vida, sanidade, mana, estamina e ranks das perícias especiais"><td data-label="Comando"><span><code>/minha_ficha</code></span></td><td data-label="O que faz">Mostra nível, XP, Raça, Classe social, Rank de magia, Classe, Atributos, Vida, Sanidade, Mana, Estamina e Ranks das perícias especiais</td></tr>
+<tr data-search="/minha_ficha abre a ficha, com as abas ficha, vitais, perícias e habilidades"><td data-label="Comando"><span><code>/minha_ficha</code></span></td><td data-label="O que faz">Abre a ficha, com as abas Ficha, Vitais, Perícias e Habilidades</td></tr>
+<tr data-search="/pericias abre direto a aba perícias"><td data-label="Comando"><span><code>/pericias</code></span></td><td data-label="O que faz">Abre direto a aba Perícias</td></tr>
+<tr data-search="/habilidades abre direto a aba habilidades"><td data-label="Comando"><span><code>/habilidades</code></span></td><td data-label="O que faz">Abre direto a aba Habilidades</td></tr>
+<tr data-search="/rolar rola um dado (ex: 1d20+3, ou 3#d20+5 pra rolar três vezes, cada uma separada) e guarda no histórico, com motivo opcional"><td data-label="Comando"><span><code>/rolar</code></span></td><td data-label="O que faz">Rola um dado (ex: 1d20+3, ou 3#d20+5 pra rolar três vezes, cada uma separada) e guarda no histórico, com motivo opcional</td></tr>
+<tr data-search="/dados abre uma bandeja de botões de dados"><td data-label="Comando"><span><code>/dados</code></span></td><td data-label="O que faz">Abre uma bandeja de botões de dados</td></tr>
+<tr data-search="/iniciativa rola a iniciativa do personagem na cena do canal"><td data-label="Comando"><span><code>/iniciativa</code></span></td><td data-label="O que faz">Rola a iniciativa do personagem na cena do canal</td></tr>
+<tr data-search="/intencao diz o que o personagem pretende fazer na cena"><td data-label="Comando"><span><code>/intencao</code></span></td><td data-label="O que faz">Diz o que o personagem pretende fazer na cena</td></tr>
+<tr data-search="/historico mostra as últimas rolagens de alguém, ou de um personagem"><td data-label="Comando"><span><code>/historico</code></span></td><td data-label="O que faz">Mostra as últimas rolagens de alguém, ou de um personagem</td></tr>
 <tr data-search="/niveis mostra o xp e as vantagens de cada nível e marca o nível do personagem"><td data-label="Comando"><span><code>/niveis</code></span></td><td data-label="O que faz">Mostra o XP e as vantagens de cada nível e marca o nível do personagem</td></tr>
 <tr data-search="/extrato_xp mostra de onde veio o xp do personagem, com motivo e mestre"><td data-label="Comando"><span><code>/extrato_xp</code></span></td><td data-label="O que faz">Mostra de onde veio o XP do personagem, com motivo e mestre</td></tr>
 <tr data-search="/rank rank público de xp total, de personagens ou de jogadores (soma dos personagens de cada um)"><td data-label="Comando"><span><code>/rank</code></span></td><td data-label="O que faz">Rank público de XP total, de personagens ou de jogadores (soma dos personagens de cada um)</td></tr>
-<tr data-search="/calcular_recursos simula vida, sanidade, mana e estamina com os números e o nível que o jogador digitar e mostra a conta"><td data-label="Comando"><span><code>/calcular_recursos</code></span></td><td data-label="O que faz">Simula Vida, Sanidade, Mana e Estamina com os números e o nível que o jogador digitar e mostra a conta</td></tr></tbody>
+<tr data-search="/calcular_recursos simula vida, sanidade, mana e estamina com os números e o nível que o jogador digitar e mostra a conta"><td data-label="Comando"><span><code>/calcular_recursos</code></span></td><td data-label="O que faz">Simula Vida, Sanidade, Mana e Estamina com os números e o nível que o jogador digitar e mostra a conta</td></tr>
+<tr data-search="/disciplinas mostra as disciplinas do personagem"><td data-label="Comando"><span><code>/disciplinas</code></span></td><td data-label="O que faz">Mostra as Disciplinas do personagem</td></tr>
+<tr data-search="/ajuda, /help mostra a ajuda do bot"><td data-label="Comando"><span><code>/ajuda</code>, <code>/help</code></span></td><td data-label="O que faz">Mostra a ajuda do bot</td></tr>
+</tbody>
   </table></div>
   <p>Vários comandos aceitam o campo opcional <code>personagem:</code> pra escolher qual personagem usar; sem ele, vale o que o jogador está usando.</p>
-
-  <h3>Comandos dos mestres</h3>
-  <p>Cargo Mestre ou permissão de Gerenciar Servidor.</p>
-  <div class="table-wrap"><table>
-    <thead><tr><th>Comando</th><th>O que faz</th></tr></thead>
-    <tbody>
-<tr data-search="/mestre dar_xp dá xp a um personagem; o nível sobe sozinho. número negativo tira xp, pra corrigir um engano"><td data-label="Comando"><span><code>/mestre dar_xp</code></span></td><td data-label="O que faz">Dá XP a um personagem; o nível sobe sozinho. Número negativo tira XP, pra corrigir um engano</td></tr>
-<tr data-search="/mestre upar atalho: dá o xp que falta pro próximo nível"><td data-label="Comando"><span><code>/mestre upar</code></span></td><td data-label="O que faz">Atalho: dá o XP que falta pro próximo nível</td></tr>
-<tr data-search="/mestre corrigir_nivel põe o personagem no começo de um nível"><td data-label="Comando"><span><code>/mestre corrigir_nivel</code></span></td><td data-label="O que faz">Põe o personagem no começo de um nível</td></tr>
-<tr data-search="/mestre rank_pericia define o rank (0 a 10) de uma perícia especial"><td data-label="Comando"><span><code>/mestre rank_pericia</code></span></td><td data-label="O que faz">Define o Rank (0 a 10) de uma perícia especial</td></tr>
-<tr data-search="/mestre apagar apaga rank de magia, raça, classe social ou tudo, pro jogador rolar de novo"><td data-label="Comando"><span><code>/mestre apagar</code></span></td><td data-label="O que faz">Apaga Rank de magia, Raça, Classe social ou tudo, pro jogador rolar de novo</td></tr>
-<tr data-search="/mestre corrigir_magia, corrigir_raca, corrigir_estado define o valor na mão, sem rolar"><td data-label="Comando"><span><code>/mestre corrigir_magia</code>, <code>corrigir_raca</code>, <code>corrigir_estado</code></span></td><td data-label="O que faz">Define o valor na mão, sem rolar</td></tr>
-<tr data-search="/mestre ficha mostra a ficha completa de um personagem"><td data-label="Comando"><span><code>/mestre ficha</code></span></td><td data-label="O que faz">Mostra a ficha completa de um personagem</td></tr>
-<tr data-search="/mestre jogador mostra quantos personagens o jogador tem, as vagas, o xp de cada um e quantos já excluiu"><td data-label="Comando"><span><code>/mestre jogador</code></span></td><td data-label="O que faz">Mostra quantos personagens o jogador tem, as vagas, o XP de cada um e quantos já excluiu</td></tr>
-<tr data-search="/mestre vagas define as vagas extras de personagem de um jogador"><td data-label="Comando"><span><code>/mestre vagas</code></span></td><td data-label="O que faz">Define as vagas extras de personagem de um jogador</td></tr>
-<tr data-search="/mestre excluir_personagem exclui pra sempre o personagem de outro jogador (pede confirmação e avisa o jogador)"><td data-label="Comando"><span><code>/mestre excluir_personagem</code></span></td><td data-label="O que faz">Exclui pra sempre o personagem de outro jogador (pede confirmação e avisa o jogador)</td></tr>
-<tr data-search="/mestre atributos define atributos na mão, sem conferir pontos nem limites (pode diminuir)"><td data-label="Comando"><span><code>/mestre atributos</code></span></td><td data-label="O que faz">Define atributos na mão, sem conferir pontos nem limites (pode diminuir)</td></tr>
-<tr data-search="/mestre corrigir_classe define a classe na mão, mesmo depois de o jogador já ter escolhido"><td data-label="Comando"><span><code>/mestre corrigir_classe</code></span></td><td data-label="O que faz">Define a classe na mão, mesmo depois de o jogador já ter escolhido</td></tr>
-<tr data-search="/mestre exportar manda ao mestre uma cópia de segurança do banco de dados (só ele vê)"><td data-label="Comando"><span><code>/mestre exportar</code></span></td><td data-label="O que faz">Manda ao mestre uma cópia de segurança do banco de dados (só ele vê)</td></tr></tbody>
-  </table></div>
-  <p>Toda rolagem e toda ação de mestre ficam registradas.</p>
+  <p>Quem é mestre tem comandos próprios, com ajuda separada dentro do bot.</p>
+  <p>Toda rolagem fica registrada no histórico.</p>
 </section>
 
     <footer>Documento vivo, sistema ainda em desenvolvimento. Consulte o capítulo "Em Aberto" para o que falta fechar.</footer>
