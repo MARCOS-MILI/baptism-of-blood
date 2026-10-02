@@ -4,7 +4,7 @@
 
 Sistema de RP de vampiro ambientado na França de 1790, entre a Revolução e o retorno das trevas. Aqui vive o site do servidor: a lore, as regras completas, os vampiros e dhampirs, as classes com suas habilidades e as ferramentas para montar o personagem.
 
-**[Abrir o site](https://marcos-mili.github.io/baptism-of-blood/)**
+**[Abrir o site](https://baptism-of-blood.github.io/)**
 
 ## O que tem no site
 - **Lore:** o mundo, a história e a vida na França de 1790.
